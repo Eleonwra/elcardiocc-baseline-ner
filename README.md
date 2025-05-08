@@ -10,7 +10,7 @@ The ElCardioCC task focuses on entity recognition within clinical cardiology tex
 
 elcardiocc-ner-baseline/
 
-elcardiocc-ner-baseline/
+```text
 ├── data/
 │   ├── labelset.txt               # Full list of codes available in Doccano
 │   ├── codes_list.txt             # TBD
