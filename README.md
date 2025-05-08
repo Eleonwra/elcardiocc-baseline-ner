@@ -13,7 +13,7 @@ The ElCardioCC task focuses on entity recognition within clinical cardiology tex
 │   ├── labelset.txt               # Full list of codes available in Doccano
 │   ├── codes_list.txt             # TBD
 │   ├── train_dataset.jsonl        # Raw dataset export from Doccano
-│   ├── final_dataset.pickle       # Final dataset after train/val split
+│   ├── final_dataset.pickle       # Final dataset after train/val split (too big)
 │   └── code_frequencies.xlsx      # Frequency distribution of codes
 ├── notebooks/
 │   ├── preprocessing/
