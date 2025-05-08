@@ -8,13 +8,24 @@ The ElCardioCC task focuses on entity recognition within clinical cardiology tex
 
 ## 📂 Repository Structure
 
-- `labelset.txt` – Full list of codes available to annotators in Doccano  
-- `codes_list.txt` – *(Optional: clarify usage if included)*  
-- `train_dataset.jsonl` – Raw training dataset exported from Doccano  
-- `final_dataset.pickle` – Final dataset after train/validation split  
-- `code_frequencies.xlsx` – Code frequency statistics for exploration  
-- `validate_icd10_annotations.py` – Validation script for code correctness and span overlaps  
-- `src/` – (Optional) Python scripts for preprocessing, training, evaluation
+elcardiocc-ner-baseline/
+
+elcardiocc-ner-baseline/
+├── data/
+│   ├── labelset.txt               # Full list of codes available in Doccano
+│   ├── codes_list.txt             # TBD
+│   ├── train_dataset.jsonl        # Raw dataset export from Doccano
+│   ├── final_dataset.pickle       # Final dataset after train/val split
+│   └── code_frequencies.xlsx      # Frequency distribution of codes
+├── notebooks/
+│   ├── preprocessing/
+|       ├── validate_icd10_annotations.py  # Code & span validation for annotated dataset
+│   │   └── preprocessing.ipynb    # Notebook for data preprocessing and formatting
+│   ├── mBERT/
+│   │   └── mBERT_training.ipynb   # TBD
+│   ├── XLM-R/
+│   │   └── XLMR_training.ipynb    # TBD
+└── README.md
 
 ## ✅ Baseline Features
 
