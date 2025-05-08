@@ -8,8 +8,6 @@ The ElCardioCC task focuses on entity recognition within clinical cardiology tex
 
 ## 📂 Repository Structure
 
-elcardiocc-ner-baseline/
-
 ```text
 ├── data/
 │   ├── labelset.txt               # Full list of codes available in Doccano
@@ -26,6 +24,7 @@ elcardiocc-ner-baseline/
 │   ├── XLM-R/
 │   │   └── XLMR_training.ipynb    # TBD
 └── README.md
+```
 
 ## ✅ Baseline Features
 
