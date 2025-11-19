@@ -26,13 +26,6 @@ The ElCardioCC task focuses on entity recognition within clinical cardiology tex
 └── README.md
 ```
 
-## ✅ Baseline Features
-
-- Preprocessing of Doccano-annotated data  
-- Validation of ICD-10 codes and span consistency  
-- Simple NER training pipeline  
-- Excel export of predictions and code frequency analysis
-
 ## 🚫 Note
 
 This baseline is **not** a competition submission. It is provided **by the organizers** after the participant submission phase, to serve as a reference point for evaluation and transparency.
