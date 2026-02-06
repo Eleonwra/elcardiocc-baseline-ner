@@ -2,33 +2,6 @@
 
 This repository contains the official **baseline Named Entity Recognition (NER) system** for the **ElCardioCC** task, part of the **BioASQ 2025** shared task. It is developed and provided by the **task organizers** for post-submission evaluation and comparison with participant systems.
 
-## 🔍 About the Task
+**Disclaimer**: This baseline **is not** a competition submission. It is provided by the organizers post-submission to serve as a standardized reference point for transparency, and comparative analysis of participant systems.
 
-The ElCardioCC task focuses on entity recognition within clinical cardiology texts. This baseline provides a pipeline for training and evaluating an NER model using the annotated dataset distributed to participants.
-
-## 📂 Repository Structure
-
-```text
-├── data/
-│   ├── labelset.txt               # Full list of codes available in Doccano
-│   ├── codes_list.txt             # TBD
-│   ├── train_dataset.jsonl        # Raw dataset export from Doccano
-│   ├── final_dataset.pickle       # Final dataset after train/val split (too big)
-│   └── code_frequencies.xlsx      # Frequency distribution of codes
-├── notebooks/
-│   ├── preprocessing/
-|       ├── validate_icd10_annotations.py  # Code & span validation for annotated dataset
-│   │   └── preprocessing.ipynb    # Notebook for data preprocessing and formatting
-│   ├── mBERT/
-│   │   └── mBERT_training.ipynb   # TBD
-│   ├── XLM-R/
-│   │   └── XLMR_training.ipynb    # TBD
-└── README.md
-```
-
-## 🚫 Note
-
-This baseline is **not** a competition submission. It is provided **by the organizers** after the participant submission phase, to serve as a reference point for evaluation and transparency.
-
----
 
