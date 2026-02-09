@@ -4,7 +4,7 @@ This repository contains the official **baseline Named Entity Recognition (NER) 
 
 **Disclaimer**: This baseline **is not** a competition submission. It is provided by the organizers post-submission to serve as a standardized reference point for transparency, and comparative analysis of participant systems.
 
-**Citation**: If you use this baseline or the ElCardioCC dataset in your research, please cite the following paper: 
+**Citation**: If you use this code or the ElCardioCC dataset, please cite the original BioASQ 2025 task overview: 
 
 ```bash
 @inproceedings{Dimitriadis2025OverviewOE,
