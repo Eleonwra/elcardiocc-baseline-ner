@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+data/*
+!data/labelset.txt
+!data/labelset_descriptions.json
+!data/train_dataset.jsonl
+!data/test_dataset.jsonl
