@@ -1,4 +1,5 @@
 # elcardiocc-baseline-ner
+[![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow)](https://huggingface.co/Stoikopoulou/elcardiocc-mbert-ner-baseline)
 
 This repository contains the official **baseline Named Entity Recognition (NER) system** for the **ElCardioCC** task, part of the **BioASQ 2025** shared task. It is developed and provided by the **task organizers** for post-submission evaluation and comparison with participant systems.
 
@@ -10,11 +11,10 @@ Due to the computational intensity of fine-tuning the **mBERT** model, this proj
 - **Reproducibility:** To ensure deterministic results, a fixed random seed of `42` was used for all PyTorch, NumPy, and Python random operations.
 - **Tracking:** Experiment tracking, hyperparameter logging, and metric visualization were managed via **Weights & Biases (W&B)**.
 
-# ElCardioCC Baseline NER
 
-[![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow)](https://huggingface.co/Stoikopoulou/elcardiocc-mbert-ner-baseline)
 
-**Citation**: If you use this code or the ElCardioCC dataset, please cite the original BioASQ 2025 task overview: 
+
+## Citation: If you use this code or the ElCardioCC dataset, please cite the original BioASQ 2025 task overview: 
 
 ```bash
 @inproceedings{Dimitriadis2025OverviewOE,
