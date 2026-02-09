@@ -14,8 +14,8 @@ Due to the computational intensity of fine-tuning the **mBERT** model, this proj
 
 
 
-## Citation: If you use this code or the ElCardioCC dataset, please cite the original BioASQ 2025 task overview: 
-
+## Citation: 
+If you use this code or the ElCardioCC dataset, please cite the original BioASQ 2025 task overview: 
 ```bash
 @inproceedings{Dimitriadis2025OverviewOE,
   title={Overview of ElCardioCC Task on Clinical Coding in Cardiology at BioASQ 2025},
