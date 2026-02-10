@@ -11,6 +11,15 @@ Due to the computational intensity of fine-tuning the **mBERT** model, this proj
 - **Reproducibility:** To ensure deterministic results, a fixed random seed of `42` was used for all PyTorch, NumPy, and Python random operations.
 - **Tracking:** Experiment tracking, hyperparameter logging, and metric visualization were managed via **Weights & Biases (W&B)**.
 
+## Preprocessing
+Step,Method / Tool,Details
+Segmentation,Keyword-driven,Splits documents into sections based on clinical headers.
+Sentence Splitting,Stanza,Robust handling of Greek clinical abbreviations and irregular formats.
+Tokenization,WordPiece,Native mBERT tokenizer with a 384 token maximum length.
+
+## Training
+The baseline system is built on the cased multilingual BERT-base architecture. The model was fine-tuned with a token-level classification head to perform NER under the BIO2 tagging scheme.
+
 ## Inference
 
 **Subword-to-Entity Reconstruction**
