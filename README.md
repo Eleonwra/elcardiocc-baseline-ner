@@ -14,13 +14,13 @@ Due to the computational intensity of fine-tuning the **mBERT** model, this proj
 ## Inference
 
 **Subword-to-Entity Reconstruction**
-1.	Subword Aggregation: Rebuilds original words by merging Lexical Heads with their subsequent Sub-units (prefixed with ##).
-2.	Label Resolution: Assigns a single class to the reconstructed word via Majority Voting across all fragments.
-3.	Coordinate Alignment: Maps words to character offsets using Regex Search with a Stateful Pointer to ensure unique indexing of duplicate terms.
+1.	**Subword Aggregation:** Rebuilds original words by merging Lexical Heads with their subsequent Sub-units (prefixed with ##).
+2.	**Label Resolution:** Assigns a single class to the reconstructed word via Majority Voting across all fragments.
+3.	**Coordinate Alignment:** Maps words to character offsets using Regex Search with a Stateful Pointer to ensure unique indexing of duplicate terms.
 
 **Word-to-Phrase Grouping**
 1.	**Neighbour Check**: Merges adjacent words if they are separated by exactly one character.
-2.	**Grouping Logic**: Joins consecutive words into a single phrase whenever they are predicted as entities, regardless of whether they follow a strict B- or I- sequence.
+2.	**Grouping Logic**: Joins consecutive words into a single phrase whenever they are predicted as entities, regardless of whether they follow a strict B or I sequence.
 
 **Known Limitations** 
 1.	**The Strict +1 Gap:** Phrases are split if words are separated by more than one character (e.g., double spaces or newlines), as the logic requires an exact 1-character distance.
