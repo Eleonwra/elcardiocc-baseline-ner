@@ -7,3 +7,5 @@ data/*
 !data/labelset_descriptions.json
 !data/train_dataset.jsonl
 !data/test_dataset.jsonl
+!data/results.json
+models/*

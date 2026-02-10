@@ -1,5 +1,6 @@
 import json
 import simple_icd_10 as icd
+import os
 
 def load_dataset(input_file):
     dataset = []
@@ -43,8 +44,10 @@ def check_overlap(dataset):
 
     return True
 
-input_file = 'data/train_dataset.jsonl'
+script_home = os.path.dirname(os.path.abspath(__file__))
+input_file = os.path.join(script_home,'..', "data", "train_dataset.jsonl")
 dataset = load_dataset(input_file)
+
 if check_icd_10_codes(dataset):
     print('ICD-10 codes check OK')
 if check_overlap(dataset):
