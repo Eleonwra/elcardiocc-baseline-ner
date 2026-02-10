@@ -12,7 +12,7 @@ Due to the computational intensity of the **mBERT** model, this project utilized
 - **Tracking:** Experiment tracking, hyperparameter logging, and metric visualization were managed via **Weights & Biases (W&B)**.
 
 ## Preprocessing
-Documents were segmented into sections via a keyword-driven method based on clinical headers. Sentences were then split using Stanza and tokenized with a 384-token maximum length.
+Documents were segmented into sections via a keyword-driven method based on clinical headers. These sections were then split into individual sentences via Stanza and tokenized with a 384-token maximum length.
 
 ## Training
 The baseline system is built on the cased multilingual BERT-base architecture. The model was fine-tuned with a token-level classification head to perform NER under the BIO2 tagging scheme.
