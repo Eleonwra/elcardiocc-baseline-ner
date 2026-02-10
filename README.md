@@ -24,7 +24,7 @@ Due to the computational intensity of fine-tuning the **mBERT** model, this proj
 
 **Known Limitations** 
 1.	**The Strict +1 Gap:** Phrases are split if words are separated by more than one character (e.g., double spaces or newlines), as the logic requires an exact 1-character distance.
-2.	**Character Mismatch:** The tokenizer does modify symbols like /, (, and + by isolating or stripping them. It also frequently normalizes Greek accents. These modifications cause the Regex Search to fail, as it cannot find an exact match in the original text, resulting in the permanent deletion of the entity from the results.
+2.	**Character Mismatch:** The tokenizer does modify symbols like /, (, and + by isolating or stripping them. These modifications cause the Regex Search to fail. This results in incomplete mapping, where entities may be truncated, split into fragments, or entirely omitted from the final output.
 
 ## Citation: 
 If you use this code or the ElCardioCC dataset, please cite the original BioASQ 2025 task overview:
