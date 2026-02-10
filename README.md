@@ -11,8 +11,22 @@ Due to the computational intensity of fine-tuning the **mBERT** model, this proj
 - **Reproducibility:** To ensure deterministic results, a fixed random seed of `42` was used for all PyTorch, NumPy, and Python random operations.
 - **Tracking:** Experiment tracking, hyperparameter logging, and metric visualization were managed via **Weights & Biases (W&B)**.
 
+## Inference
 
+**Subword-to-Entity Reconstruction**
+1.	Subword Aggregation: Rebuilds original words by merging Lexical Heads with their subsequent Sub-units (prefixed with ##).
+2.	Label Resolution: Assigns a single class to the reconstructed word via Majority Voting across all fragments.
+3.	Coordinate Alignment: Maps words to character offsets using Regex Search with a Stateful Pointer to ensure unique indexing of duplicate terms.
 
+**Word-to-Phrase Grouping**
+1.	Neighbour Check: Merges adjacent words if they are separated by exactly one character.
+2.	BIO Label Logic: Groups words if they share the same label or follow the B- (Beginning) and I- (Inside) sequence rules.
+3.	Phrase Merging: Combines the group into a single string, sets the final span from the first start to the last end.
+
+**Known Limitations** 
+1.	The Strict +1 Gap: Phrases are split if words are separated by more than one character (e.g., double spaces or newlines), as the logic requires an exact 1-character distance.
+2.	The "Duplicate Ghost" Problem: If the stateful pointer gets out of sync, the system may incorrectly map multiple predictions to the first occurrence of a word rather than the correct one.
+3.	Character Mismatch: The tokenizer does modify symbols like /, (, and + by isolating or stripping them. It also frequently normalizes Greek accents. These modifications cause the Regex Search to fail, as it cannot find an exact match in the original text, resulting in the permanent deletion of the entity from the results.
 
 ## Citation: 
 If you use this code or the ElCardioCC dataset, please cite the original BioASQ 2025 task overview: 
