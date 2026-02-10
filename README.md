@@ -27,7 +27,9 @@ Due to the computational intensity of fine-tuning the **mBERT** model, this proj
 2.	**Character Mismatch:** The tokenizer does modify symbols like /, (, and + by isolating or stripping them. It also frequently normalizes Greek accents. These modifications cause the Regex Search to fail, as it cannot find an exact match in the original text, resulting in the permanent deletion of the entity from the results.
 
 ## Citation: 
-If you use this code or the ElCardioCC dataset, please cite the original BioASQ 2025 task overview: 
+If you use this code or the ElCardioCC dataset, please cite the following:
+
+**BioASQ 2025 Task Overview**
 ```bash
 @inproceedings{Dimitriadis2025OverviewOE,
   title={Overview of ElCardioCC Task on Clinical Coding in Cardiology at BioASQ 2025},
@@ -37,3 +39,13 @@ If you use this code or the ElCardioCC dataset, please cite the original BioASQ 
   url={https://api.semanticscholar.org/CorpusID:281670004}
 }
 ```
+
+**Master's Thesis**
+```bash
+@article{stoikopoulou2024,
+      author        = "Stoikopoulou, E.",
+      title         = "{Weakly Supervised NER for Cardiology Using Multilingual Transformers}",
+      year          = "2024",
+}
+```
+
