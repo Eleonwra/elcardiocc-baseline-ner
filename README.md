@@ -1,5 +1,6 @@
 # elcardiocc-baseline-ner
 [![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow)](https://huggingface.co/Stoikopoulou/elcardiocc-mbert-ner-baseline)
+
 [![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-yellow)](https://huggingface.co/spaces/Stoikopoulou/elcardiocc_baseline_ner)
 
 This repository contains the official **baseline Named Entity Recognition (NER) system** for the **ElCardioCC** task, part of the **BioASQ 2025** shared task. It is developed and provided by the **task organizers** for post-submission evaluation and comparison with participant systems.
