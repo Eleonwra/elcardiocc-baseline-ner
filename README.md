@@ -1,21 +1,41 @@
 # elcardiocc-baseline-ner
 [![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow)](https://huggingface.co/Stoikopoulou/elcardiocc-mbert-ner-baseline)
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-blue)](https://huggingface.co/spaces/Stoikopoulou/elcardiocc_baseline_ner)
 
 This repository contains the official **baseline Named Entity Recognition (NER) system** for the **ElCardioCC** task, part of the **BioASQ 2025** shared task. It is developed and provided by the **task organizers** for post-submission evaluation and comparison with participant systems.
 
 **Disclaimer**: This baseline **is not** a competition submission. It is provided by the organizers post-submission to serve as a standardized reference point for transparency, and comparative analysis of participant systems.
 
 ##  Experimental Setup
-Due to the computational intensity of fine-tuning the **mBERT** model, this project utilized **Google Colab Pro** resources:
-- **Compute:** All experiments for finetuning were performed on **Google Colab** using an **NVIDIA Tesla T4 GPU** (16GB VRAM).
+Due to the computational intensity of the **mBERT** model, this project utilized **Google Colab Pro** resources:
+- **Compute:** All experiments for finetuning and inference were performed on **Google Colab** using an **NVIDIA Tesla T4 GPU** (16GB VRAM).
 - **Reproducibility:** To ensure deterministic results, a fixed random seed of `42` was used for all PyTorch, NumPy, and Python random operations.
 - **Tracking:** Experiment tracking, hyperparameter logging, and metric visualization were managed via **Weights & Biases (W&B)**.
 
+## Preprocessing
+Documents were segmented into sections via a keyword-driven method based on clinical headers. These sections were then split into individual sentences via Stanza and tokenized with a 384-token maximum length.
 
+## Training
+The baseline system is built on the cased multilingual BERT-base architecture. The model was fine-tuned with a token-level classification head to perform NER under the BIO2 tagging scheme.
 
+## Inference
+
+**Subword-to-Entity Reconstruction**
+1.	**Subword Aggregation:** Rebuilds original words by merging Lexical Heads with their subsequent Sub-units (prefixed with ##).
+2.	**Label Resolution:** Assigns a single class to the reconstructed word via Majority Voting across all fragments.
+3.	**Coordinate Alignment:** Maps words to character offsets using Regex Search with a Stateful Pointer to ensure unique indexing of duplicate terms.
+
+**Word-to-Phrase Grouping**
+1.	**Neighbour Check**: Merges adjacent words if they are separated by exactly one character.
+2.	**Grouping Logic**: Joins consecutive words into a single phrase whenever they are predicted as entities, regardless of whether they follow a strict B or I sequence.
+
+**Known Limitations** 
+1.	**The Strict +1 Gap:** Phrases are split if words are separated by more than one character (e.g., double spaces or newlines), as the logic requires an exact 1-character distance.
+2.	**Character Mismatch:** The tokenizer does modify symbols like /, (, and + by isolating or stripping them. These modifications cause the Regex Search to fail. This results in incomplete mapping, where entities may be truncated, split into fragments, or entirely omitted from the final output.
 
 ## Citation: 
-If you use this code or the ElCardioCC dataset, please cite the original BioASQ 2025 task overview: 
+If you use this code or the ElCardioCC dataset, please cite the original BioASQ 2025 task overview:
+
 ```bash
 @inproceedings{Dimitriadis2025OverviewOE,
   title={Overview of ElCardioCC Task on Clinical Coding in Cardiology at BioASQ 2025},
@@ -25,3 +45,5 @@ If you use this code or the ElCardioCC dataset, please cite the original BioASQ 
   url={https://api.semanticscholar.org/CorpusID:281670004}
 }
 ```
+
+
