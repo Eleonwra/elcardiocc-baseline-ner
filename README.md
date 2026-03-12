@@ -7,7 +7,7 @@ This repository contains the official **baseline Named Entity Recognition (NER) 
 **Disclaimer**: This baseline **is not** a competition submission. It is provided by the organizers post-submission to serve as a standardized reference point for transparency, and comparative analysis of participant systems.
 
 ### 📢 Participate in ElCardioCC 2026
-Are you interested in contributing to clinical NER and medical natural language processing? We welcome all researchers to participate in this year's competition! 
+Are you interested in contributing to medical natural language processing? We welcome all researchers to participate in this year's competition! 
 
 **[Click here to visit the official competition site and register](https://elcardiocc.web.auth.gr)**
 
